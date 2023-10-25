@@ -18,7 +18,7 @@ class OrderController extends Controller
 
     public function manage(){
         $orders = DB::table('orders')->join('customers','orders.customer_id','=','customers.customer_id')->join('payments','orders.order_id','=','payments.payment_id')->select('orders.*','customers.name','payments.payment_type','payments.payment_status')->get();
-        return view('BackEnd.Order.manage',compact('orders'));
+        return view('BackEnd.order.manage',compact('orders'));
     }
 
     public function viewOrder($order_id){
@@ -28,7 +28,7 @@ class OrderController extends Controller
         $payment = Payment::where('order_id', $order->order_id)->first();
         $order_detail = Order_Detail::where('order_id', $order->order_id)->get();
 
-        return view('BackEnd.Order.view_order', compact('order','customer', 'shipping', 'payment', 'order_detail'));
+        return view('BackEnd.order.view_order', compact('order','customer', 'shipping', 'payment', 'order_detail'));
     }
 
     public function viewBill($order_id){
@@ -37,7 +37,7 @@ class OrderController extends Controller
         $shipping = Shipping::find($order->shipping_id);
         $payment = Payment::where('order_id', $order->order_id)->first();
         $order_detail = Order_Detail::where('order_id', $order->order_id)->get();
-        return view('BackEnd.Order.view_order_bill', compact('order','customer', 'shipping', 'payment', 'order_detail'));
+        return view('BackEnd.order.view_order_bill', compact('order','customer', 'shipping', 'payment', 'order_detail'));
     }
 
     public function downloadBill($order_id){

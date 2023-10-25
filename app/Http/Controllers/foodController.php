@@ -12,7 +12,7 @@ class foodController extends Controller
 {
     public function index(){
         $categories = category::where('category_status',1)->get();
-        return view('Backend.food.add',compact('categories'));
+        return view('Backend.food.add', compact('categories'));
     }
 
     public function save(Request $request){
@@ -41,7 +41,7 @@ class foodController extends Controller
         $food = DB::table('food')->join('categories','food.category_id','=','categories.category_id')->select('food.*','categories.category_name')->get();
         $categories = category::where('category_status',1)->get();
 
-        return view("Backend.food.manage",compact('food', 'categories'));
+        return view("BackEnd.food.manage",compact('food', 'categories'));
     }
 
     public function active($food_id){

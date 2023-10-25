@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class voucherController extends Controller
 {
     public function index(){
-        return view('Backend.voucher.add');
+        return view('BackEnd.voucher.add');
     }
 
     public function save(Request $request){
