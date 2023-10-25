@@ -1,4 +1,4 @@
-<h3>You can experience the website via <a href="https://tuananhfood.000webhostapp.com/" action="_blank">https://tuananhfood.000webhostapp.com</a></h3><hr>
+<h3>You can experience the website via <a href="https://tuananhfood.000webhostapp.com/" target="_blank">https://tuananhfood.000webhostapp.com</a></h3><hr>
 <h3>Follow the following instructions to experience the website most effectively</h3><hr>
 <ul>ADMIN PANEL
     <li>You add the path "/register" to the back of the main path to create an account</li>
